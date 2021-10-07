@@ -48,6 +48,7 @@ public class EmployeeServiceImpl implements EmployeeService{
         if (employee == null)
             throw new EmployeeNotFoundException();
         employee.setName(name);
+        fakeRepo.save(employee);
         return employee;
     }
 

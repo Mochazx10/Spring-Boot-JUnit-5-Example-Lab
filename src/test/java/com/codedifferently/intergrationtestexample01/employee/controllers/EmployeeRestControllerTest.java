@@ -49,13 +49,13 @@ public class EmployeeRestControllerTest {
                 .andExpect(MockMvcResultMatchers.jsonPath("$.name", CoreMatchers.is("Bob")));
     }
 
-    //Todo: Create Test for Get Method that returns all items with a status code of 200
+    //Todo: Create Test for Get Method that returns all employees with a status code of 200
 
 
-    //Todo: Create Test for PUT Method that updates a status code with 204
+    //Todo: Create Test for PUT Method that updates a employee and returns status code with 204
 
 
-    //Todo: Create Test for DELETE method that removes the item and returns a status code of 202
+    //Todo: Create Test for DELETE method that removes the employee and returns a status code of 202
 
 
 }
