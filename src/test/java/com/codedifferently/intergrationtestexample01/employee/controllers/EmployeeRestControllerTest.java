@@ -42,7 +42,7 @@ public class EmployeeRestControllerTest {
     public void createNewEmployee() throws Exception {
         Employee bob =  Employee.builder("Bob");
         BDDMockito.given(service.create(Mockito.any())).willReturn(bob);
-        mockMvc.perform(MockMvcRequestBuilders.post("/api/employees")
+        mockMvc.perform(MockMvcRequestBuilders.post("/api/employees/")
                         .contentType((MediaType.APPLICATION_JSON))
                         .content(JsonUtil.toJson(bob)))
                 .andExpect(MockMvcResultMatchers.status().isCreated())
