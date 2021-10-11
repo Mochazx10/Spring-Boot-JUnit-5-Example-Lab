@@ -8,7 +8,7 @@ import java.util.List;
 
 @Component
 public class AssignmentFakeRepoImpl implements AssignmentFakeRepo{
-    private List<Assignment> assignments;
+    private final List<Assignment> assignments;
 
     public AssignmentFakeRepoImpl() {
         assignments = new ArrayList<>();

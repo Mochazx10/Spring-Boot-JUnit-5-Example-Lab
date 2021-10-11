@@ -8,7 +8,7 @@ import java.util.List;
 
 @Component
 public class EmployeeFakeRepoImpl implements EmployeeFakeRepo {
-    private List<Employee> employees;
+    private final List<Employee> employees;
 
     public EmployeeFakeRepoImpl(){
         employees = new ArrayList<>();

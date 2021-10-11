@@ -10,15 +10,15 @@ import java.util.List;
 @Service
 public class EmployeeServiceImpl implements EmployeeService{
 
-    private EmployeeFakeRepo fakeRepo;
+    private final EmployeeFakeRepo fakeRepo; //fake repo variable
 
     @Autowired
     public EmployeeServiceImpl(EmployeeFakeRepo fakeRepo){
         this.fakeRepo = fakeRepo;
-    }
+    }//
 
     @Override
-    public Employee create(String name) {
+    public Employee create(String name) { //a method
         Employee employee = Employee.builder(name);
         fakeRepo.save(employee);
         return employee;
@@ -27,15 +27,15 @@ public class EmployeeServiceImpl implements EmployeeService{
     @Override
     public List<Employee> getAllEmployees() {
         return fakeRepo.findAll();
-    }
+    }//a method
 
     @Override
     public Integer getNumberOfEmployees() {
         return fakeRepo.findAll().size();
-    }
+    }//a method
 
     @Override
-    public Employee getEmployeeById(int id) throws EmployeeNotFoundException{
+    public Employee getEmployeeById(int id) throws EmployeeNotFoundException{// a method
         Employee employee = fakeRepo.findById(id);
         if (employee == null)
             throw new EmployeeNotFoundException();
@@ -43,7 +43,7 @@ public class EmployeeServiceImpl implements EmployeeService{
     }
 
     @Override
-    public Employee update(Integer id, String name) throws EmployeeNotFoundException{
+    public Employee update(Integer id, String name) throws EmployeeNotFoundException{// a method
         Employee employee = fakeRepo.findById(id);
         if (employee == null)
             throw new EmployeeNotFoundException();
@@ -55,6 +55,11 @@ public class EmployeeServiceImpl implements EmployeeService{
     @Override
     public void delete(Integer id) {
         fakeRepo.delete(id);
+    }// a method
+
+    @Override
+    public Object setNewEmployee(Object any) { // a method
+        return null;
     }
 
 
